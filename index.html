@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alioune Badara Gueye — Chercheur & Expert Documentaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0f0d;
+    --ink-soft: #1c1e1a;
+    --cream: #f5f0e8;
+    --cream-muted: #e8e1d0;
+    --gold: #b8922a;
+    --gold-light: #d4a843;
+    --rust: #8b3a2a;
+    --sage: #4a6741;
+    --text-primary: #f0ebe0;
+    --text-secondary: #b8b0a0;
+    --text-muted: #7a7268;
+    --border: rgba(184,146,42,0.2);
+    --border-soft: rgba(240,235,224,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--text-primary);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(14,15,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--gold); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Crimson Pro', serif; font-size: 0.9rem;
+    font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-secondary); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 40%, rgba(184,146,42,0.05) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 70%, rgba(74,103,65,0.06) 0%, transparent 60%);
+  }
+  .hero-rule {
+    position: absolute; top: 0; left: 3rem;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--border) 20%, var(--border) 80%, transparent);
+  }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem; margin-bottom: 2rem;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name em {
+    font-style: italic; color: var(--gold-light);
+  }
+  .hero-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.2rem; font-weight: 300;
+    color: var(--text-secondary); letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+  .hero-desc {
+    font-size: 1.1rem; line-height: 1.85;
+    color: var(--text-secondary); max-width: 580px;
+    margin-bottom: 3rem;
+  }
+  .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none;
+    font-family: 'Crimson Pro', serif; font-size: 0.9rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--ink);
+    font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline {
+    border: 1px solid var(--border); color: var(--text-secondary);
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 5rem;
+    padding-top: 2rem; border-top: 1px solid var(--border-soft);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 600; color: var(--gold);
+    display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 0.4rem;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 3rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-tag::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 600;
+    line-height: 1.1; margin-bottom: 1rem;
+  }
+  .section-subtitle {
+    font-size: 1.05rem; color: var(--text-secondary);
+    max-width: 560px; margin-bottom: 3.5rem;
+  }
+
+  /* ── PUBLICATIONS ── */
+  #publications { background: var(--ink-soft); }
+  .pub-grid { display: flex; flex-direction: column; gap: 0; }
+  .pub-item {
+    display: grid; grid-template-columns: 4rem 1fr auto;
+    gap: 0 2rem; align-items: start;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-soft);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .pub-item:first-child { border-top: 1px solid var(--border-soft); }
+  .pub-item:hover { padding-left: 0.5rem; }
+  .pub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; color: var(--text-muted);
+    padding-top: 0.4rem;
+  }
+  .pub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 400; font-style: italic;
+    color: var(--text-primary); margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+  .pub-item:hover .pub-title { color: var(--gold-light); }
+  .pub-meta {
+    font-size: 0.85rem; color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+  .pub-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; align-self: center;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .pub-write-area {
+    margin-top: 3rem; padding: 2rem;
+    border: 1px dashed var(--border);
+    background: rgba(184,146,42,0.02);
+    display: none;
+  }
+
+  /* ── ADMIN LOGIN ── */
+  .admin-login-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); background: transparent;
+    border: 1px solid var(--border-soft);
+    padding: 0.4rem 1rem; cursor: pointer;
+    transition: all 0.3s;
+  }
+  .admin-login-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .admin-login-btn svg { width: 10px; height: 10px; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: rgba(14,15,13,0.85); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--ink-soft); border: 1px solid var(--border);
+    padding: 2.5rem; width: min(420px, 90vw);
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 600;
+  }
+  .modal-sub {
+    font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: -0.5rem;
+  }
+  .modal-input {
+    background: transparent; border: 1px solid var(--border-soft);
+    padding: 0.7rem 1rem; color: var(--text-primary);
+    font-family: 'Crimson Pro', serif; font-size: 1rem;
+    outline: none; transition: border-color 0.3s; width: 100%;
+  }
+  .modal-input:focus { border-color: var(--gold); }
+  .modal-error {
+    font-size: 0.8rem; color: var(--rust); font-family: 'JetBrains Mono', monospace;
+    display: none;
+  }
+  .modal-error.show { display: block; }
+  .modal-actions { display: flex; gap: 0.75rem; }
+  .btn-cancel {
+    background: transparent; border: 1px solid var(--border-soft);
+    color: var(--text-muted); cursor: pointer; padding: 0.6rem 1.5rem;
+    font-family: 'Crimson Pro', serif; font-size: 0.9rem;
+    letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s;
+  }
+  .btn-cancel:hover { border-color: var(--text-muted); color: var(--text-primary); }
+  .pub-write-area p {
+    font-size: 0.9rem; color: var(--text-muted); font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .pub-form { display: flex; flex-direction: column; gap: 0.75rem; }
+  .pub-form input, .pub-form textarea, .pub-form select {
+    background: transparent;
+    border: 1px solid var(--border-soft);
+    padding: 0.6rem 1rem;
+    color: var(--text-primary);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    outline: none; transition: border-color 0.3s;
+    resize: vertical;
+  }
+  .pub-form input:focus, .pub-form textarea:focus, .pub-form select:focus {
+    border-color: var(--gold);
+  }
+  .pub-form select option { background: var(--ink); }
+
+  /* ── RECHERCHE ── */
+  .research-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .research-card {
+    border: 1px solid var(--border-soft); padding: 2rem;
+    transition: all 0.4s;
+    position: relative; overflow: hidden;
+  }
+  .research-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .research-card:hover::before { transform: scaleX(1); }
+  .research-card:hover { border-color: var(--border); background: rgba(184,146,42,0.03); }
+  .research-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 1.2rem; display: block;
+  }
+  .research-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 600;
+    margin-bottom: 0.75rem; line-height: 1.3;
+  }
+  .research-card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); border: 1px solid var(--border-soft);
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* ── PARCOURS (Timeline) ── */
+  #parcours { background: var(--ink-soft); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-item {
+    position: relative; padding: 0 0 3rem 2.5rem;
+  }
+  .tl-item::before {
+    content: ''; position: absolute; left: -4px; top: 0.45rem;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ink-soft); border: 1px solid var(--gold);
+    transition: background 0.3s;
+  }
+  .tl-item:hover::before { background: var(--gold); }
+  .tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .tl-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+  .tl-org {
+    font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;
+  }
+  .tl-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start;
+  }
+  .contact-info p {
+    font-size: 1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.75rem;
+    color: var(--text-secondary); text-decoration: none;
+    font-size: 0.95rem; margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+  .contact-link:hover { color: var(--gold-light); }
+  .contact-link-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); min-width: 4rem;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-form input, .contact-form textarea {
+    background: transparent;
+    border: 0; border-bottom: 1px solid var(--border-soft);
+    padding: 0.75rem 0;
+    color: var(--text-primary);
+    font-family: 'Crimson Pro', serif; font-size: 1rem;
+    outline: none; transition: border-color 0.3s;
+    resize: none;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: var(--text-muted); font-style: italic;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-bottom-color: var(--gold);
+  }
+  .contact-form textarea { min-height: 120px; }
+
+
+  /* ── BLOG ── */
+  #blog { background: var(--ink); }
+  .blog-grid { display: flex; flex-direction: column; gap: 3rem; }
+
+  .article-card {
+    border: 1px solid var(--border-soft);
+    padding: 2.5rem; transition: border-color 0.3s;
+    position: relative;
+  }
+  .article-card:hover { border-color: var(--border); }
+  .article-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .article-card:hover::before { transform: scaleX(1); }
+  .article-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 600; line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .article-body {
+    font-size: 1rem; color: var(--text-secondary);
+    line-height: 1.85; white-space: pre-wrap;
+  }
+  .article-tags { margin-top: 1.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+  /* Formulaire rédaction article */
+  .article-write-area {
+    margin-top: 3rem; padding: 2rem;
+    border: 1px dashed var(--border);
+    background: rgba(184,146,42,0.02);
+    display: none;
+  }
+  .article-write-area p.form-label {
+    font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-bottom: 1rem;
+  }
+  .article-form { display: flex; flex-direction: column; gap: 0.75rem; }
+  .article-form input, .article-form textarea, .article-form select {
+    background: transparent;
+    border: 1px solid var(--border-soft);
+    padding: 0.6rem 1rem;
+    color: var(--text-primary);
+    font-family: 'Crimson Pro', serif; font-size: 1rem;
+    outline: none; transition: border-color 0.3s; resize: vertical;
+  }
+  .article-form input:focus, .article-form textarea:focus { border-color: var(--gold); }
+  .article-form textarea.big { min-height: 280px; line-height: 1.8; }
+
+  /* Bouton admin blog */
+  .admin-blog-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); background: transparent;
+    border: 1px solid var(--border-soft);
+    padding: 0.4rem 1rem; cursor: pointer;
+    transition: all 0.3s;
+  }
+  .admin-blog-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  .article-empty {
+    font-size: 1rem; color: var(--text-muted); font-style: italic;
+    padding: 2rem 0; border-top: 1px solid var(--border-soft);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem; border-top: 1px solid var(--border-soft);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p {
+    font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.05em;
+  }
+  footer .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--text-secondary);
+  }
+
+  /* ── ANIMS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-name { animation: fadeUp 0.7s ease 0.25s both; }
+  .hero-title { animation: fadeUp 0.7s ease 0.35s both; }
+  .hero-desc { animation: fadeUp 0.7s ease 0.45s both; }
+  .hero-cta-group { animation: fadeUp 0.7s ease 0.55s both; }
+  .hero-stats { animation: fadeUp 0.7s ease 0.7s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-stats { gap: 2rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .pub-item { grid-template-columns: 3rem 1fr; }
+    .pub-tag { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#accueil" class="nav-logo">A. B. Gueye</a>
+  <ul class="nav-links">
+    <li><a href="#blog">Articles</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#recherche">Recherche</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="accueil" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Ph.D · Bordeaux, France</span>
+    <h1 class="hero-name">Alioune Badara<br><em>Gueye</em></h1>
+    <p class="hero-title">Docteur en Sciences du Langage — Linguistique &amp; Ingénierie Documentaire</p>
+    <p class="hero-desc">
+      Spécialisé en analyse du discours et textométrie, gestion des archives, rédaction scientifique et créative, et valorisation des données documentaires à l'ère numérique. Curieux, méthodique et engagé dans les enjeux de transmission du savoir, je développe également des projets littéraires et technologiques intégrant les humanités numériques et l'intelligence artificielle.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#blog" class="btn btn-primary">Lire les articles</a>
+      <a href="#publications" class="btn btn-outline">Publications</a>
+      <a href="#contact" class="btn btn-outline">Contact</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">8+</span>
+        <span class="stat-label">Années d'expertise</span>
+      </div>
+      <div>
+        <span class="stat-num">4</span>
+        <span class="stat-label">Diplômes masters / doctorat</span>
+      </div>
+      <div>
+        <span class="stat-num">3</span>
+        <span class="stat-label">Langues maîtrisées</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <p class="section-tag">Travaux académiques</p>
+    <h2 class="section-title">Publications &amp; écrits</h2>
+    <p class="section-subtitle">Articles scientifiques, chapitres d'ouvrages et contributions aux débats académiques en linguistique, TALN et sciences de l'information.</p>
+
+    <div class="pub-grid" id="pubList">
+
+      <div class="pub-item">
+        <span class="pub-num">01</span>
+        <div>
+          <p class="pub-title">« Saillances ou connaissance du corpus ? »</p>
+          <p class="pub-meta">Analyse des discours politiques en Afrique — Revue de linguistique computationnelle · 2021</p>
+          <div class="tag-list">
+            <span class="tag">Linguistique</span>
+            <span class="tag">Discours politique</span>
+            <span class="tag">Corpus</span>
+          </div>
+        </div>
+        <span class="pub-tag">Article</span>
+      </div>
+
+    </div>
+
+    <!-- Formulaire admin (masqué par défaut) -->
+    <div class="pub-write-area" id="pubWriteArea">
+      <p>Ajouter une nouvelle publication :</p>
+      <div class="pub-form">
+        <input type="text" id="newTitle" placeholder="Titre de la publication..." />
+        <input type="text" id="newMeta" placeholder="Revue, contexte, année..." />
+        <select id="newType">
+          <option value="Article">Article</option>
+          <option value="Chapitre">Chapitre d'ouvrage</option>
+          <option value="Conf.">Conférence</option>
+          <option value="Rapport">Rapport</option>
+          <option value="Thèse">Thèse</option>
+        </select>
+        <input type="text" id="newTags" placeholder="Mots-clés séparés par des virgules..." />
+        <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin-top:0.5rem">
+          <button class="btn btn-primary" onclick="addPublication()">Ajouter</button>
+          <button class="btn-cancel" onclick="lockAdmin()">Verrouiller</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton connexion admin -->
+    <button class="admin-login-btn" id="adminLoginBtn" onclick="openModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Administration
+    </button>
+
+  </div>
+</section>
+
+<!-- MODAL CONNEXION ADMIN -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal-box">
+    <p class="modal-title">Espace administrateur</p>
+    <p class="modal-sub">Connectez-vous pour gérer votre blog et vos publications.</p>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;margin-bottom:-0.25rem">EMAIL</p>
+    <input class="modal-input" type="email" id="adminEmail" value="badoura313@gmail.com" />
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;margin-bottom:-0.25rem">MOT DE PASSE</p>
+    <input class="modal-input" type="password" id="adminPwd" placeholder="Votre mot de passe Firebase..."
+      onkeydown="if(event.key==='Enter') submitLogin()" />
+    <p class="modal-error" id="loginError">Email ou mot de passe incorrect.</p>
+    <div id="loginLoading" style="display:none;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--gold);letter-spacing:0.1em">Connexion en cours...</div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" id="loginBtn" onclick="submitLogin()">Connexion</button>
+      <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" style="
+  position:fixed;bottom:2rem;right:2rem;z-index:9999;
+  background:var(--gold);color:var(--ink);
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;
+  padding:0.75rem 1.5rem;display:none;
+  animation:fadeUp 0.3s ease;
+"></div>
+
+<!-- BLOG & ARTICLES -->
+<section id="blog">
+  <div class="section-inner">
+    <p class="section-tag">Réflexions &amp; écrits</p>
+    <h2 class="section-title">Blog &amp; Articles</h2>
+    <p class="section-subtitle">Analyses, essais et contributions sur la linguistique, les archives, les humanités numériques et les enjeux documentaires contemporains.</p>
+
+    <div class="blog-grid" id="articleList">
+      <p class="article-empty" id="emptyMsg">Aucun article publié pour le moment. Revenez bientôt.</p>
+    </div>
+
+    <!-- Formulaire rédaction (masqué par défaut) -->
+    <div class="article-write-area" id="articleWriteArea">
+      <p class="form-label">Rédiger et publier un nouvel article :</p>
+      <div class="article-form">
+        <input type="text" id="artTitle" placeholder="Titre de l'article..." />
+        <input type="text" id="artSubtitle" placeholder="Sous-titre ou accroche (optionnel)..." />
+        <textarea class="big" id="artBody" placeholder="Rédigez votre article ici. Vous pouvez écrire librement, utiliser des sauts de ligne, etc."></textarea>
+        <input type="text" id="artTags" placeholder="Mots-clés séparés par des virgules..." />
+        <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin-top:0.5rem">
+          <button class="btn btn-primary" onclick="publishArticle()">Publier l'article</button>
+          <button class="btn-cancel" onclick="lockBlog()">Verrouiller</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton connexion admin blog -->
+    <button class="admin-blog-btn" id="adminBlogBtn" onclick="openModal('blog')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="10" height="10">
+        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Rédiger un article
+    </button>
+
+  </div>
+</section>
+
+<!-- RECHERCHE -->
+<section id="recherche">
+  <div class="section-inner">
+    <p class="section-tag">Domaines d'expertise</p>
+    <h2 class="section-title">Axes de recherche</h2>
+    <p class="section-subtitle">Mes travaux croisent plusieurs disciplines pour explorer la gestion et l'analyse des données textuelles à grande échelle.</p>
+
+    <div class="research-grid">
+      <div class="research-card">
+        <span class="research-icon">01 · IA &amp; TALN</span>
+        <h3>Traitement automatique du langage naturel</h3>
+        <p>Extraction d'information, indexation sémantique, analyse de corpus et modèles de langage appliqués aux flux documentaires massifs.</p>
+        <div class="tag-list">
+          <span class="tag">NLP</span><span class="tag">Extraction</span><span class="tag">Sémantique</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="research-icon">02 · Gouvernance</span>
+        <h3>Ingénierie &amp; gouvernance documentaire</h3>
+        <p>Conception de référentiels métadonnées, cycles de vie documentaire (Records Management), conformité normative et archivage légal.</p>
+        <div class="tag-list">
+          <span class="tag">GED</span><span class="tag">Normes</span><span class="tag">Archives</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="research-icon">03 · Discours</span>
+        <h3>Analyse du discours</h3>
+        <p>Étude des discours politiques africains, analyse textuelle de corpus scientifiques et traitement de données pour la recherche en SHS.</p>
+        <div class="tag-list">
+          <span class="tag">Discours</span><span class="tag">Corpus</span><span class="tag">SHS</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="research-icon">04 · Éthique IA</span>
+        <h3>Enjeux éthiques &amp; réglementaires de l'IA</h3>
+        <p>Veille sur les implications éthiques, juridiques et organisationnelles de l'intelligence artificielle dans les environnements documentaires.</p>
+        <div class="tag-list">
+          <span class="tag">Éthique</span><span class="tag">RGPD</span><span class="tag">IA Act</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="research-icon">05 · Patrimoine</span>
+        <h3>Documentation patrimoniale</h3>
+        <p>Audit, restructuration et valorisation de fonds documentaires muséaux et patrimoniaux. Catalogage expert (SIGB, UNIMARC).</p>
+        <div class="tag-list">
+          <span class="tag">Musées</span><span class="tag">Patrimoine</span><span class="tag">UNIMARC</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="research-icon">06 · Formation</span>
+        <h3>Transfert de compétences</h3>
+        <p>Formation de formateurs, ingénierie pédagogique appliquée aux sciences de l'information et à la transformation numérique.</p>
+        <div class="tag-list">
+          <span class="tag">Pédagogie</span><span class="tag">Formation</span><span class="tag">Numérique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="section-inner">
+    <p class="section-tag">Biographie académique</p>
+    <h2 class="section-title">Parcours</h2>
+    <p class="section-subtitle">Un itinéraire qui croise terrain professionnel et exigence académique, du Sénégal à Bordeaux.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <p class="tl-date">Janv. 2026 — présent</p>
+        <p class="tl-role">Chercheur Indépendant</p>
+        <p class="tl-org">IA &amp; TALN · Bordeaux, France</p>
+        <p class="tl-desc">Conception de solutions d'extraction d'information automatisée pour flux documentaires massifs. Veille sur les enjeux réglementaires et éthiques de l'IA.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">Juil. 2021 — Janv. 2025</p>
+        <p class="tl-role">Membre Associé — UR Plurielles</p>
+        <p class="tl-org">Université Bordeaux Montaigne</p>
+        <p class="tl-desc">Structuration de corpus scientifiques complexes, mise en place de référentiels métadonnées, traitement de données textuelles pour la recherche en analyse du discours.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2021</p>
+        <p class="tl-role">Doctorat en Sciences du Langage</p>
+        <p class="tl-org">Université Bordeaux Montaigne</p>
+        <p class="tl-desc">Spécialisation en linguistique computationnelle et analyse du discours. Thèse portant sur les corpus de discours politiques africains.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2015 — 2017</p>
+        <p class="tl-role">Bibliothécaire Documentaliste</p>
+        <p class="tl-org">Bibliothèque Guillemin / Musée du Temps / Citadelle de Besançon</p>
+        <p class="tl-desc">Audit et restructuration complète de fonds documentaires muséaux et patrimoniaux. Déploiement de plans de classement et catalogage expert (SIGB Absys, UNIMARC).</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2014 — 2015</p>
+        <p class="tl-role">Master Sciences du Langage</p>
+        <p class="tl-org">Université Marie et Louis Pasteur de Besançon</p>
+        <p class="tl-desc">Discours, Texte, Communication, Documentation.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2013 — 2014</p>
+        <p class="tl-role">Master Sciences de l'Information et de la Communication</p>
+        <p class="tl-org">Université Lyon 2 Lumière</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2007 — 2012</p>
+        <p class="tl-role">Parcours Archivistique &amp; Records Management</p>
+        <p class="tl-org">Citibank · Jouve · Cabinet ORGEINFO (Sénégal)</p>
+        <p class="tl-desc">Réorganisation des archives bancaires Citibank, structuration des données pour le portail de l'État (ADIE Sénégal), correction de notices SUDOC et traitement de corpus historiques.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2010</p>
+        <p class="tl-role">Master Ingénierie Documentaire</p>
+        <p class="tl-org">EBAD Dakar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-tag">Collaboration &amp; échanges</p>
+    <h2 class="section-title">Me contacter</h2>
+    <p class="section-subtitle">Pour toute proposition de collaboration académique, intervention, ou échange scientifique.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Je suis disponible pour des collaborations de recherche, des expertises documentaires, des formations professionnelles et des interventions académiques.</p>
+
+        <a href="mailto:badoura313@gmail.com" class="contact-link">
+          <span class="contact-link-icon">Email</span>
+          badoura313@gmail.com
+        </a>
+        <a href="tel:+33646560339" class="contact-link">
+          <span class="contact-link-icon">Mobile</span>
+          06 46 56 03 39
+        </a>
+        <a href="https://linkedin.com/in/aliounebadaragueye313" target="_blank" class="contact-link">
+          <span class="contact-link-icon">LinkedIn</span>
+          aliounebadaragueye313
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">Lieu</span>
+          Bordeaux, France
+        </a>
+      </div>
+
+      <div>
+        <div class="contact-form">
+          <input type="text" placeholder="Votre nom…" />
+          <input type="email" placeholder="Votre adresse email…" />
+          <input type="text" placeholder="Objet…" />
+          <textarea placeholder="Votre message…"></textarea>
+          <button class="btn btn-primary" style="align-self:flex-start; margin-top:0.5rem">Envoyer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Alioune Badara Gueye</span>
+  <p>© 2026 · Expert Documentaire &amp; Chercheur en TALN · Bordeaux</p>
+</footer>
+
+<!-- Firebase SDK (chargé juste avant le code principal) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+
+<script>
+  // ═══════════════════════════════════════════════════════════════════════
+  // FIREBASE CONFIGURATION
+  // ═══════════════════════════════════════════════════════════════════════
+  const firebaseConfig = {
+    apiKey: "AIzaSyDOTNX25O-JUcCItRHEL3NmMxWnFsJNRSI",
+    authDomain: "blogabg.firebaseapp.com",
+    databaseURL: "https://blogabg-default-rtdb.firebaseio.com",
+    projectId: "blogabg",
+    storageBucket: "blogabg.firebasestorage.app",
+    messagingSenderId: "737982645182",
+    appId: "1:737982645182:web:749b398e197e2531152fef"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db   = firebase.database();
+
+  let adminContext = null;
+  let isAdmin = false;
+
+  // ── TOAST ────────────────────────────────────────────────────────────────
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3000);
+  }
+
+  // ── AUTH STATE ───────────────────────────────────────────────────────────
+  auth.onAuthStateChanged(user => {
+    isAdmin = !!user;
+    if (user) {
+      // Montrer les deux panneaux admin
+      document.getElementById('pubWriteArea').style.display   = 'block';
+      document.getElementById('adminLoginBtn').style.display  = 'none';
+      document.getElementById('articleWriteArea').style.display = 'block';
+      document.getElementById('adminBlogBtn').style.display   = 'none';
+      // Ajouter bouton déconnexion dans la nav
+      if (!document.getElementById('logoutBtn')) {
+        const nav = document.querySelector('.nav-links');
+        const li = document.createElement('li');
+        li.innerHTML = '<a href="#" id="logoutBtn" onclick="logout();return false;" style="color:var(--rust)">Déconnexion</a>';
+        nav.appendChild(li);
+      }
+      // Rendre les articles supprimables
+      document.querySelectorAll('.delete-article-btn').forEach(b => b.style.display = 'inline-flex');
+      document.querySelectorAll('.delete-pub-btn').forEach(b => b.style.display = 'inline-flex');
+    } else {
+      document.getElementById('pubWriteArea').style.display   = 'none';
+      document.getElementById('adminLoginBtn').style.display  = 'inline-flex';
+      document.getElementById('articleWriteArea').style.display = 'none';
+      document.getElementById('adminBlogBtn').style.display   = 'inline-flex';
+      const lb = document.getElementById('logoutBtn');
+      if (lb) lb.parentElement.remove();
+    }
+  });
+
+  // ── MODAL ────────────────────────────────────────────────────────────────
+  function openModal(context) {
+    adminContext = context || 'pub';
+    document.getElementById('adminModal').classList.add('open');
+    document.getElementById('loginError').classList.remove('show');
+    document.getElementById('loginLoading').style.display = 'none';
+    document.getElementById('adminPwd').value = '';
+    setTimeout(() => document.getElementById('adminPwd').focus(), 150);
+  }
+
+  function closeModal() {
+    document.getElementById('adminModal').classList.remove('open');
+  }
+
+  async function submitLogin() {
+    const email = document.getElementById('adminEmail').value.trim();
+    const pwd   = document.getElementById('adminPwd').value;
+    if (!email || !pwd) return;
+
+    document.getElementById('loginBtn').disabled = true;
+    document.getElementById('loginLoading').style.display = 'block';
+    document.getElementById('loginError').classList.remove('show');
+
+    try {
+      await auth.signInWithEmailAndPassword(email, pwd);
+      closeModal();
+      showToast('Connecté — Bienvenue, Alioune !');
+    } catch(e) {
+      document.getElementById('loginError').classList.add('show');
+      document.getElementById('loginLoading').style.display = 'none';
+      document.getElementById('adminPwd').value = '';
+    } finally {
+      document.getElementById('loginBtn').disabled = false;
+    }
+  }
+
+  function logout() {
+    auth.signOut().then(() => showToast('Déconnecté.'));
+  }
+
+  // Fermer le modal en cliquant sur l'overlay
+  document.getElementById('adminModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ── PUBLICATIONS ─────────────────────────────────────────────────────────
+  function renderPublication(key, data, prepend) {
+    const tags = data.tags ? data.tags.split(',').map(t =>
+      `<span class="tag">${t.trim()}</span>`).join('') : '';
+    const tagsHtml = tags ? `<div class="tag-list">${tags}</div>` : '';
+    const deleteBtn = `<button class="delete-pub-btn" data-key="${key}" onclick="deletePub('${key}')"
+      style="display:${isAdmin?'inline-flex':'none'};background:none;border:none;color:var(--rust);
+      cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;
+      text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rust);margin-left:0.5rem">
+      Supprimer</button>`;
+    const html = `
+      <div class="pub-item" data-key="${key}">
+        <span class="pub-num">${data.num}</span>
+        <div>
+          <p class="pub-title">« ${data.title} »</p>
+          ${data.meta ? `<p class="pub-meta">${data.meta}</p>` : ''}
+          ${tagsHtml}
+          ${deleteBtn}
+        </div>
+        <span class="pub-tag">${data.type}</span>
+      </div>`;
+    const list = document.getElementById('pubList');
+    if (prepend) list.insertAdjacentHTML('afterbegin', html);
+    else list.insertAdjacentHTML('beforeend', html);
+  }
+
+  // Charger les publications existantes
+  db.ref('publications').orderByChild('timestamp').on('value', snap => {
+    const list = document.getElementById('pubList');
+    // Garder seulement la publication initiale (01) et supprimer les dynamiques
+    document.querySelectorAll('#pubList .pub-item[data-key]').forEach(el => el.remove());
+    let count = 1;
+    snap.forEach(child => {
+      count++;
+      renderPublication(child.key, child.val(), false);
+    });
+  });
+
+  let pubCount = 1;
+  // Compter les publications existantes au départ
+  db.ref('publications').once('value', snap => { pubCount = 1 + (snap.numChildren() || 0); });
+
+  function addPublication() {
+    const title   = document.getElementById('newTitle').value.trim();
+    const meta    = document.getElementById('newMeta').value.trim();
+    const type    = document.getElementById('newType').value;
+    const tagsRaw = document.getElementById('newTags').value.trim();
+    if (!title) return;
+
+    pubCount++;
+    const num = String(pubCount).padStart(2, '0');
+    const data = { title, meta, type, tags: tagsRaw, num, timestamp: Date.now() };
+
+    db.ref('publications').push(data)
+      .then(() => {
+        showToast('Publication ajoutée !');
+        document.getElementById('newTitle').value = '';
+        document.getElementById('newMeta').value  = '';
+        document.getElementById('newTags').value  = '';
+      })
+      .catch(e => alert('Erreur : ' + e.message));
+  }
+
+  function deletePub(key) {
+    if (!confirm('Supprimer cette publication ?')) return;
+    db.ref('publications/' + key).remove()
+      .then(() => {
+        document.querySelector(`#pubList .pub-item[data-key="${key}"]`).remove();
+        showToast('Publication supprimée.');
+      });
+  }
+
+  // ── ARTICLES ─────────────────────────────────────────────────────────────
+  function renderArticle(key, data, prepend) {
+    const tags = data.tags ? data.tags.split(',').map(t =>
+      `<span class="tag">${t.trim()}</span>`).join('') : '';
+    const tagsHtml = tags ? `<div class="article-tags">${tags}</div>` : '';
+    const deleteBtn = `<button class="delete-article-btn" data-key="${key}" onclick="deleteArticle('${key}')"
+      style="display:${isAdmin?'inline-flex':'none'};margin-top:1.5rem;background:none;
+      border:1px solid var(--rust);color:var(--rust);cursor:pointer;
+      font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;
+      text-transform:uppercase;padding:0.3rem 0.8rem">Supprimer l'article</button>`;
+    const body = data.body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const html = `
+      <div class="article-card" data-key="${key}">
+        <p class="article-date">${data.date}</p>
+        <h3 class="article-title">${data.title}</h3>
+        ${data.subtitle ? `<p style="color:var(--text-muted);font-style:italic;margin-bottom:1rem;font-size:1rem">${data.subtitle}</p>` : ''}
+        <div class="article-body">${body}</div>
+        ${tagsHtml}
+        ${deleteBtn}
+      </div>`;
+    const list = document.getElementById('articleList');
+    if (prepend) list.insertAdjacentHTML('afterbegin', html);
+    else list.insertAdjacentHTML('beforeend', html);
+  }
+
+  // Charger les articles existants
+  db.ref('articles').orderByChild('timestamp').on('value', snap => {
+    const list = document.getElementById('articleList');
+    document.querySelectorAll('#articleList .article-card').forEach(el => el.remove());
+    const emptyMsg = document.getElementById('emptyMsg');
+
+    if (!snap.exists() || snap.numChildren() === 0) {
+      if (emptyMsg) emptyMsg.style.display = 'block';
+      return;
+    }
+    if (emptyMsg) emptyMsg.style.display = 'none';
+
+    // Afficher du plus récent au plus ancien
+    const articles = [];
+    snap.forEach(child => articles.push({ key: child.key, ...child.val() }));
+    articles.reverse().forEach(a => renderArticle(a.key, a, false));
+  });
+
+  function publishArticle() {
+    const title    = document.getElementById('artTitle').value.trim();
+    const subtitle = document.getElementById('artSubtitle').value.trim();
+    const body     = document.getElementById('artBody').value.trim();
+    const tagsRaw  = document.getElementById('artTags').value.trim();
+    if (!title || !body) { showToast('Titre et contenu obligatoires.'); return; }
+
+    const now = new Date();
+    const date = now.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
+    const data = { title, subtitle, body, tags: tagsRaw, date, timestamp: Date.now() };
+
+    db.ref('articles').push(data)
+      .then(() => {
+        showToast('Article publié !');
+        document.getElementById('artTitle').value    = '';
+        document.getElementById('artSubtitle').value = '';
+        document.getElementById('artBody').value     = '';
+        document.getElementById('artTags').value     = '';
+      })
+      .catch(e => alert('Erreur : ' + e.message));
+  }
+
+  function deleteArticle(key) {
+    if (!confirm('Supprimer cet article définitivement ?')) return;
+    db.ref('articles/' + key).remove()
+      .then(() => {
+        document.querySelector(`#articleList .article-card[data-key="${key}"]`).remove();
+        showToast('Article supprimé.');
+        if (document.querySelectorAll('#articleList .article-card').length === 0)
+          document.getElementById('emptyMsg').style.display = 'block';
+      });
+  }
+
+  // ── NAV ACTIVE ───────────────────────────────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold-light)' : '';
+    });
+  });
+</script>
+</body>
+</html>
